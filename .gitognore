@@ -1,0 +1,12 @@
+.task_1_json/source_file_2.json
+.DS_Store
+
+.task_2_CNN/cifar10_output/**
+.task_2_CNN/custom_output/**
+
+.task_2_CNN/test/**
+.task_2_CNN/train.rotfaces/**/**
+.task_2_CNN/train.rotfaces/train/**
+.task_2_CNN/train.rotfaces/train_truth.csv
+
+

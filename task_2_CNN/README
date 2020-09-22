@@ -1,0 +1,63 @@
+
+Solution to task 2.
+
+This directory contains -
+1.	cifar10_model.h5 - This model is generated using CIFAR10-CNN. 
+2.	customCnn_model.h5 - This is custom build model, bellow is the architecture -
+
+	Conv2D(32, (3,3))
+	Activation('relu')
+	MaxPooling2D(pool_size = (2,2))
+	Dropout(0.25)
+	Conv2D(32, (3,3))
+	Activation('relu')
+	MaxPooling2D(pool_size = (2,2))
+	Dropout(0.25)
+	Conv2D(64, (3,3))
+	Activation('relu')
+	MaxPooling2D(pool_size = (2,2))
+	Dropout(0.25)
+	Flatten()
+	Dense(128)
+	Activation('relu')
+	Dense(64)
+	Activation('relu')
+	Dense(4)
+	Activation('softmax')
+
+3.	nn_task.py - This is the source code used to train model and predict the label of images.
+4.	custom_Imgs.npy - This is a numpy array file, conatins the corret rotation of images in numpy array format, by custom model build.
+5.	custom_test.preds.csv - This csv file contains the predicted result by the custom model.
+6.	custom_output.zip - This zip file contains all the test images. These images are rotated by the prediction of custom model.
+
+7.	cifar10_Imgs.npy - This is a numpy array file, conatins the corret rotation of images in numpy array format, by cifar10 model build.
+8.	cifar_test.preds.csv - This csv file contains the predicted result by the cifar10 model.
+9.	cifar10_output.zip - This zip file contains all the test images. These images are rotated by the prediction of cifar10 model.
+
+
+
+Execute Instructions - 
+To run this srcipt, open terminal go to the location where this script is placed. Put the train and test data on same location. Create two folder on same loaction, 1st one "cifar10_output" second one "custom_output". The rotated images will be stored in these folder, by both the models. Now run the following command -
+
+	>> python nn_task.py
+
+This script requrie bellow library, please install/setup these library before running the script.
+1.	Keras
+2.	Numpy
+3.	Pandas
+4.	Pillow
+5.	Scikit-Learn
+
+
+Apporach Used -
+1.	Cifar10
+For this i used the predefined algorithm and used it. Made no changes to tha algorithm. I trained this model for 5 epoch, for each single epoch my machine took around 12 minutes. It takes around one hour to complete the training. The cifar10 model gives the accuracy around 97.83% on test data.
+
+2.	Custom Model
+For this i used the above architecture, designed by me. This takes less time to train. I used the same number of epoch to train this. For single epoch it takes around 2 mins. Taking total time of around 10 mins. The accuracy of custom model is around 97.94% on test data. This model is faster than cifar.
+
+I used adam optimizer in my custom model, and RMSProp in cifar10 model. I created more dense layer in my custom model than cifar10 model. I tried to reduce the overfiting by using drropouts.
+
+Prediction - 
+After training and storing the model to disk. I predicted the label of each image in test data. Corrected the rotation of image as per the model prediction and store the images in PNG format as well as in numpy format. I also stored the results in csv file.
+

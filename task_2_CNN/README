@@ -50,6 +50,8 @@ This script requrie bellow library, please install/setup these library before ru
 
 
 Apporach Used -
+Read the data, in the memory. Then converted the label into integer (label encoding). Applied some preprocessing to the images. After this spilt the data into train and test set. Used 80% of the data for train the model and rest 20% of the data for validate the model. Bellow is the two architecture used in the solution apporach.
+
 1.	Cifar10
 For this i used the predefined algorithm and used it. Made no changes to tha algorithm. I trained this model for 5 epoch, for each single epoch my machine took around 12 minutes. It takes around one hour to complete the training. The cifar10 model gives the accuracy around 97.83% on test data.
 
